@@ -1,0 +1,26 @@
+what is Microsoft fabrics ?
+
+it contains all software together, data analytics
+
+steps to install 
+ 1. https://signup.live.com
+2.https://aka.ms/getm365
+
+https://github.com/Afreen-techlab/data-engineering-notes
+
+Onelake is similar as one drive but it sis for Microsoft fabric creating workspace and added any lake house file then you can see easily and u can upload in local it will be available in fabric also automatically once refresh 
+
+2nd video 
+How to install and add account with credentails in local to use 
+Use account name of fabric account and how the files upload in both one lake fabric and local 
+
+3rd video 
+
+Create new workspace new lakehosuse and upload the file and. Pipeline also added 
+
+4th video shortcurt and 5th 
+
+Reference how to create shortcut and , onelake select and select the file select and add to onelake and create 
+
+6th video shortcut 
+ Create notebook and add the lakehosuse existing then load the data it will execute 
