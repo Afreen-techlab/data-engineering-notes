@@ -24,3 +24,7 @@ Reference how to create shortcut and , onelake select and select the file select
 
 6th video shortcut 
  Create notebook and add the lakehosuse existing then load the data it will execute 
+
+
+7th adls gen2 
+Create shortcut but external select adls gen2 then cretae add url from access key account key url from primary url from endpoints in storage account and then path also from storage account the files will copy from Azure to  fabric
