@@ -1,0 +1,108 @@
+1757. Write a solution to find the ids of products that are both low fat and recyclable.
+
+Return the result table in any order.
+soln :# Write your MySQL query statement below
+Select product_id as product_id from Products where low_fats = 'Y' and 
+recyclable = 'Y' order by product_id asc;
+
+584. Find the names of the customer that are either:
+
+referred by any customer with id != 2.
+not referred by any customer.
+Return the result table in any order.
+
+soln: Select name from Customer where  referee_id not in (2) or 
+referee_id is null order by id asc
+
+595. A country is big if:
+
+it has an area of at least three million (i.e., 3000000 km2), or
+it has a population of at least twenty-five million (i.e., 25000000).
+Write a solution to find the name, population, and area of the big countries.
+
+Return the result table in any order.
+
+soln:Select name, population,area from world where area >= 3000000 or population >= 25000000 order by name;
+
+
+1148.Write a solution to find all the authors that viewed at least one of their own articles.
+
+Return the result table sorted by id in ascending order.
+
+soln: # Write your MySQL query statement below
+select distinct author_id  as id  from Views where author_id = viewer_id order by  id     asc;
+
+1683. Write a solution to find the IDs of the invalid tweets. The tweet is invalid if the number of characters used in the content of the tweet is strictly greater than 15.
+
+Return the result table in any order.
+
+soln: 
+Select tweet_id       from tweets where length(content) >15 order by tweet_id;
+
+1378. Write a solution to show the unique ID of each user, If a user does not have a unique ID replace just show null.
+soln: Select  unique_id,
+ e.name
+from Employees e left join EmployeeUNI u on e.id = u.id
+order by e.name; --(isnull)
+
+1068. Write a solution to report the product_name, year, and price for each sale_id in the Sales table.
+
+Return the resulting table in any order.
+
+select d.product_name, s.year , s.price from Sales s
+join Product d on d.product_id   = s.product_id
+order by price;  
+ 
+(doubt)
+1581.Write a solution to find the IDs of the users who visited without making any transactions and the number of times they made these types of visits.
+
+Return the result table sorted in any order.
+Select v.customer_id , count(v.visit_id) count_no_trans 
+from Visits v  left join Transactions t on t.visit_id = v.visit_id
+where t.transaction_id  is null
+group by v.customer_id
+
+197.Write a solution to find all dates' id with higher temperatures compared to its previous dates (yesterday).
+
+Return the result table in any order.
+
+select w.id from Weather w, weather w2 
+where w.temperature > w2.temperature    
+and datediff(w.recordDate,w2.recordDate) =1
+
+1661.The time to complete a process is the 'end' timestamp minus the 'start' timestamp. The average time is calculated by the total time to complete every process on the machine divided by the number of processes that were run.
+
+The resulting table should have the machine_id along with the average time as processing_time, which should be rounded to 3 decimal places.
+
+Return the result table in any order
+
+Select 
+
+t1.machine_id,  
+
+round(avg(t2.timestamp-t1.timestamp), 3) as processing_time  
+
+from Activity t1 
+
+577.Write a solution to report the name and bonus amount of each employee who satisfies either of the following:
+
+The employee has a bonus less than 1000.
+The employee did not get any bonus.
+Return the result table in any order.
+
+Select e.name, b.bonus from Employee e 
+left join Bonus b on b.empid = e.empid
+where b.bonus < 1000 or b.bonus is null; 
+
+1280.Write a solution to find the number of times each student attended each exam.
+
+Return the result table ordered by student_id and subject_name.
+
+SELECT Students.student_id, Students.student_name, Subjects.subject_name, COUNT(Examinations.student_id) as attended_exams
+FROM Students  
+CROSS JOIN Subjects 
+LEFT JOIN Examinations ON Students.student_id = Examinations.student_id 
+                      AND Subjects.subject_name = Examinations.subject_name
+GROUP BY Students.student_id, Students.student_name, Subjects.subject_name
+ORDER BY Students.student_id, Subjects.subject_name
+
