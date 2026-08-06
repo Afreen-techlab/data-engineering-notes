@@ -28,3 +28,26 @@ Every time, delete the old data and load all the records again.
 
 Spark sql - data scientist 
 
+databricks- looking community edition - community page login 
+
+databricks homepage 
+
+workspace - workspace - create folder - datawarehouse - create notebook - 
+
+left side - catalog , database with tables 
+
+Data modelling - data table and relationship
+
+1.conceptual data modelling - high level view - main entities
+2.Logical data modelling - connect the tables - relationship
+3.Physical dm- data types,constraints, indexes
+
+1 to 1, 1 to m, m to m
+
+Star Schema - fact and dimension table 
+
+fact table - store measurable values ( have all different tables id )
+dimension table - store descriptive information 
+
+Snowflake Schema - dimentional table is still further divided into related tables(normalized)
+
