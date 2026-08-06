@@ -1,0 +1,30 @@
+Central location to store every single data 
+
+language bag carries all types of outfit example 
+
+what is the difference between database and data warehouse 
+
+MySQL are db ms (data base management system)
+
+ETL
+
+staging layer(raw form)  and core layer (curated data)
+
+Increemental loading 
+
+Incremental Loading
+
+Incremental loading means only loading the new or changed records since the last load. cdc (change data capture)
+
+everytime we have to truncate the staging layer
+if we need to maintain historic then we required 
+
+Tranisent - remove stage layer
+Persistent - keep stage layer 
+
+1. Full Loading
+
+Every time, delete the old data and load all the records again.
+
+Spark sql - data scientist 
+
