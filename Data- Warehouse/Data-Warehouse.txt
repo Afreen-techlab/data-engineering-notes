@@ -1,0 +1,125 @@
+incremental loading - etl
+
+3 stages - extract , transform , load 
+1. pull the data from database
+2. 2 layer in data warehouse 
+1. staging - get the data in raw form (because we dont need to put the load on database)
+2. applyingthe transformation (all aggregation) we store the data in core layer ( which is exposed to all analyst) curated data.
+Data Mart - subset of data warehouse 
+data mart can hold data for based on business use case 
+
+
+Incremental loading
+
+1. Data - in table form expel with id,name,date,
+take to staging layer duplicate of the data 
+2. transform data 
+3. Core data intial to pull the data 
+
+for 2nd time same column is in database then we only add the new records - Change data capture 
+
+staging layer - everytime we will truncate staging layer
+only pull the incremental data
+1.Transistent - just truncate the data 
+2.Persistent - keep the data
+
+Spark sql 
+
+Databricks
+1. Databricks community edition -  google try databricks - sign in 
+2. we need compute we will create the compute 
+3. to convert sql - %sql
+
+heading %md
+shift + enter
+
+catalog - workspace
+
+first we will load the data to staging 
+
+create table salesDWH.stg_sales
+as select * from sales.orders
+
+apply transformation
+i want to quantity multiply by 10 refine the data 
+
+
+Datamodelling 
+
+types of data models 
+1. Conceptual - high level business needs
+2. Logical - build the logic how to connect the tables, normalization
+3. Physical model - real physical tables constraints 
+
+Dimension data model - used by data enginer
+
+store your data in forms of facts and dimension tables
+
+1 table --- break into small tables
+
+cust , prod, ord entity relationship 
+
+fact table - available at granular level eg , - numbers
+numberic cols and all foreigh keys 
+only 1 fact table and multiple dimension table 
+
+Dimension table - no numeric colms , only holds the contexts of the column -cust , prod, ord 
+
+big table 
+
+2 rules 
+
+
+Star schema - dimensional multiple and 1 fact then schema is star schema  no hierarchy between dimension table 
+
+
+Snowflake schema - we have hierarchy between 2 dimension table 
+dim 5 attached dim 3 -- fact table 
+in few we cannot use star every time 
+
+
+if you have duplicate custid - only the granular non duplicate present in dimension table 
+
+first we have to create always dimension table , fact table
+
+2 grab the surrogate keys 
+
+types of fact tables 
+
+1. Granular/transaction fact table
+1 transaction = 1 row 
+2. Periodic fact table / snapshot 
+1 row =!= 1 transaction
+3.Accumulating fact table 
+
+1 row = Process
+
+
+types of dimension tables
+
+1.Conformed Dimensions
+
+DimProducts ---> FactOrders
+DimProducts ---> Factcancelled
+
+2.Role Playing Dimensions
+created when connected fact and dimension with multiple conditions
+
+factorder ---orderdate,cancelled date 
+---> dimdate 2 different role more than 1 role 
+Junk Dimensions 
+
+Fact table 
+2 records 1 to 2 values in dimension then its junk country and continent ax,b X
+
+Degenrate Dimensions
+
+Fact table only one colun ordered any context value in fact table related to order but its not only orderid only 
+
+
+ 
+
+
+
+
+
