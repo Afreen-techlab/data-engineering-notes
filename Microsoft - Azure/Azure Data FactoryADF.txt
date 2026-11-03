@@ -1,0 +1,6 @@
+ADF - 
+pipeline, datasets , triggers 
+
+Azure storage account - container - upload 
+Azure resource
+ADF
