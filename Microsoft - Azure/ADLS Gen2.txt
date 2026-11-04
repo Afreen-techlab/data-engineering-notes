@@ -1,0 +1,51 @@
+ADLS Gen 2
+
+
+1. object storage 
+
+store as object 
+object store endpoints , file system endpoint
+
+ADLS GEn2 is build upon bob storage 
+
+1. create storage account in azure validate and create 
+
+create one more storag eaccount datalakedemo
+
+advanced --> DLS gen2  used for big data analytics enable hierarch namespace 
+
+
+open 2 tabs enable gen2 and one without enable gen 2
+
+containers icon is different with both 
+
+folder can be created by gen2 not in other - created directly from the option but in other will uploading 
+
+file in gen2 and blob
+
+any setting we can do it in folder level in other file upload level
+
+manage acl when right click on folder 
+
+
+container --- blob , container ---blob 
+
+container --- folder -- file ----ACL
+
+Endpoint file system access ---hdinsight, databricks , ADF , power bi
+
+endpoint object store access---> azure data lake analytics ----> Custom app --> legacy system ---> Power BI 
+
+ADL --
+A data lake analytics + data lake store 
+what is ADL ? ---why data lake 
+
+Architecture ---
+
+create ADL -
+
+delete --
+
+simple job create ---
+timeline to complete in home -- today the video on topics 
+
