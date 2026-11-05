@@ -48,4 +48,9 @@ delete --
 
 simple job create ---
 timeline to complete in home -- today the video on topics 
+create a data lake -
 
+data store aaccount ---data explorer -- create new folder 
+1. creating the azure data lake account 
+
+install all softwares
