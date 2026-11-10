@@ -1,0 +1,54 @@
+%python
+
+from pyspark.sql.functions import spark_partition_id
+
+data = [
+    (1,"Afreen","Bangalore",5000),
+    (2,"Alyaanah","Tumkuru",8900),
+    (3,"Aahil","Mysore",10000),
+    (4,"Noorain","Mumbai",12000),
+    (5,"Ahmed","Mumbai",15000)
+        ]
+
+columns = ["OrderId","Name","City","Amount"]
+order_df = spark.createDataFrame(data,columns)
+order_df.show()
+order_df.printSchema()
+order_df.explain("formatted")
+##print("Number of partitions:",order_df.rdd.getNumPartitions()) how many partition a dataframe can have
+order_repartioned_df = order_df.repartition(2)
+print("Number of partitions:",order_repartitioned_df.rdd.getNumPartitions())
+order_repartitioned_df = order_df.repartition(2)
+#print("Number of partitions:",order_repartitioned_df.rdd.getNumPartitions()) rdd wont work 
+# Repartition DataFrame
+order_df = order_df.repartition(4)
+# Display partition IDs
+order_df.select(
+    "*",
+    spark_partition_id().alias("Partition_ID")
+).show()
+display(order_df)
+
+high_value_oders = order_df.filter(order_df.Amount > 3000)
+high_value_orders.show()
+
+high_vaue_orders.select("CustomerName","Amount").show()
+total_orders = order_df.count()
+print("Total number of orders:",total_orders)
+
+
+%python
+data = [
+    (1,"Afreen","Bangalore",5000),
+    (2,"Alyaanah","Tumkuru",8900),
+    (3,"Aahil","Mysore",10000),
+    (4,"Noorain","Mumbai",12000),
+    (5,"Ahmed","Mumbai",15000)
+        ]
+
+columns = ["OrderId","Name","City","Amount"]
+order_df = spark.createDataFrame(data,columns)
+order_df.show()
+order_df.printSchema()
+order_df.explain("formatted")
+print("Number of partitions:",order_df.rdd.getNumPartitions())
