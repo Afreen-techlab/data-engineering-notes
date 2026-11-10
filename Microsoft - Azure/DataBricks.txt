@@ -52,3 +52,29 @@ order_df.show()
 order_df.printSchema()
 order_df.explain("formatted")
 print("Number of partitions:",order_df.rdd.getNumPartitions())
+
+
+withcolumn() -- add new column 
+
+withColumnREnamed(old, changing now)
+
+drop(colmnam)
+orderby(col("colname").desc()).show() --highest to lowest 
+
+orderby(col("colname").asc()).show() --lowest  to highest 
+
+distinct() -- remove duplicate records
+
+
+dataframe.filter(col("Salary").isnull()).show(_
+
+
+fillna() -- 
+
+dropna(_ - remove records with missing values
+
+
+
+
+
+
