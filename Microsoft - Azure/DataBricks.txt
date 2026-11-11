@@ -73,6 +73,11 @@ fillna() --
 
 dropna(_ - remove records with missing values
 
+11/11/26
+
+Handson practice in azure website 
+Data resource / data storage - hirerical enable / data container created the folder 
+
 
 
 
