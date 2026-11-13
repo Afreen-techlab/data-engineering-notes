@@ -78,7 +78,11 @@ dropna(_ - remove records with missing values
 Handson practice in azure website 
 Data resource / data storage - hirerical enable / data container created the folder 
 
+Azure - youtube channel
 
+DBFS - Access the data you need to provide the url instead of providing the url dbfs is abstraction layer top on the data lake instead of create file systems
+	
+everything will continue with youtube today i will finish i will take screenshot to practice databricks 
 
 
 
